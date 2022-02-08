@@ -32,7 +32,7 @@ import (
 	kubemetrics "github.com/operator-framework/operator-sdk/pkg/kube-metrics"
 	"github.com/operator-framework/operator-sdk/pkg/log/zap"
 	"github.com/operator-framework/operator-sdk/pkg/metrics"
-	"github.com/operator-framework/operator-sdk/pkg/restmapper"
+	// "github.com/operator-framework/operator-sdk/pkg/restmapper"
 	sdkVersion "github.com/operator-framework/operator-sdk/version"
 	"github.com/spf13/pflag"
 	admRegv1 "k8s.io/api/admissionregistration/v1"
@@ -113,7 +113,7 @@ func main() {
 	// TODO: Enable leader election in the operator manager
 	// Create a new Cmd to provide shared dependencies and start components
 	mgr, err := manager.New(cfg, manager.Options{
-		MapperProvider:         restmapper.NewDynamicRESTMapper,
+		// MapperProvider:         restmapper.NewDynamicRESTMapper,
 		MetricsBindAddress:     fmt.Sprintf("%s:%d", metricsHost, metricsPort),
 		HealthProbeBindAddress: fmt.Sprintf("%s:%d", probeHost, probePort),
 	})
